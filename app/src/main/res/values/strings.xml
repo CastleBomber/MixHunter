@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MixHunter</string>
+    <string name="sound_cloud">SoundCloud</string>
+    <string name="apple_music">AppleMusic</string>
+    <string name="youtube">Youtube</string>
+    <string name="spotify">Spotify</string>
 </resources>
