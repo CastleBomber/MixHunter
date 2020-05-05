@@ -2,19 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/item1"
+    <item
+        android:id="@+id/dropdown_menu"
         android:icon="@drawable/ic_icon"
-        android:title="Item 1"
-        app:showAsAction="ifRoom" />
-
-    <item android:id="@+id/item2"
-        android:icon="@drawable/ic_icon"
-        android:title="Item 2"
-        app:showAsAction="ifRoom" />
-
-    <item android:id="@+id/item3"
-        android:icon="@drawable/ic_icon"
-        android:title="Item 3"
-        app:showAsAction="ifRoom" />
-
+        android:title="Dropdown Menu"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_pref"
+                android:onClick="onPreferencesMenuItemClicked"
+                android:title="Preferences"/>
+        </menu>
+    </item>
 </menu>

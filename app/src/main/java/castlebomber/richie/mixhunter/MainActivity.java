@@ -1,6 +1,9 @@
 package castlebomber.richie.mixhunter;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -44,14 +47,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.item1:
-                Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
+            case R.id.dropdown_menu:
+                //Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.item2:
-                Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item3:
-                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
+            case R.id.menu_pref:
+                //Toast.makeText(this, "Sub Item 1 selected", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
-        mImageUrls.add("https://i.imgur.com/clsV6zv.png");
+        mImageUrls.add("https://i.imgur.com/vH5qeIr.png");
         mNames.add("SoundCloud");
 
         mImageUrls.add("https://i.imgur.com/XPlbYju.jpg");
@@ -83,5 +83,22 @@ public class MainActivity extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNames, mImageUrls);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        editor.commit();
+    }
+
+    public void onPreferencesMenuItemClicked(MenuItem v){
+        startActivity(new Intent(this, PreferencesActivity.class));
     }
 }
