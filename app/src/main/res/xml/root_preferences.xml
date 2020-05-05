@@ -5,7 +5,7 @@
     <EditTextPreference
         android:defaultValue="Default value"
         android:inputType="textShortMessage|textLongMessage"
-        android:key="count"
+        android:key="key_count_ListPreference"
         android:selectAllOnFocus="true"
         android:singleLine="true"
         android:title="Username"
@@ -13,8 +13,9 @@
 
     <ListPreference
         android:defaultValue="true"
-        android:entries="@array/theme_pref"
-        android:key="key_of_VICTORY"
+        android:entries="@array/theme_pref_entries"
+        android:entryValues="@array/theme_pref_values"
+        android:key="key_inc_ListPreference"
         android:title="Theme"
         app:useSimpleSummaryProvider="true"/>
 

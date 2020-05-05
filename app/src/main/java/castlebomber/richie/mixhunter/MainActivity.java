@@ -22,15 +22,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
 
+    private static final String TAG = "MainActivity";
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: started.");
 
@@ -95,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        editor.putString("key_count_ListPreference", "");
+
         editor.commit();
     }
 

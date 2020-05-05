@@ -4,14 +4,19 @@
     <string name="apple_music">AppleMusic</string>
     <string name="youtube">Youtube</string>
     <string name="spotify">Spotify</string>
+
     
-    
-    
-    
-    
-    <string-array name="theme_pref">
+    <string-array name="theme_pref_entries">
         <item>neon</item>
         <item>bubble gum</item>
         <item>bloody red</item>
     </string-array>
+
+    <string-array name="theme_pref_values">
+        <item>neon 1</item>
+        <item>bubble gum 2</item>
+        <item>bloody red 3</item>
+    </string-array>
+
+
 </resources>
